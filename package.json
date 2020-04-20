@@ -16,7 +16,12 @@
   "bugs": {
     "url": "https://github.com/overlookjs/plugin-load/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@overlook/plugin": "^0.2.2",
+    "@overlook/route": "^0.4.0",
+    "fs-extra": "^9.0.0",
+    "tiny-invariant": "^1.1.0"
+  },
   "devDependencies": {
     "@overlookmotel/eslint-config": "^7.1.2",
     "@overlookmotel/eslint-config-jest": "^4.0.1",
@@ -44,7 +49,7 @@
     "test": "npm run lint && npm run test-main",
     "lint": "eslint '*.js' '.*.js' '**/*.js' '**/.*.js'",
     "lint-fix": "eslint '*.js' '.*.js' '**/*.js' '**/.*.js' --fix",
-    "test-main": "cross-env NODE_ENV=production jest",
+    "test-main": "jest",
     "cover": "npm run cover-main && rm -rf coverage",
     "coveralls": "npm run cover-main && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "cover-main": "cross-env COVERAGE=true NODE_ENV=production jest --coverage",
