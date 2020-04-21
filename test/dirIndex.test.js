@@ -40,6 +40,10 @@ describe('customised index file', () => {
 				expect(route).toBeInstanceOf(Route);
 			});
 
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', '_index.js'));
+			});
+
 			it('has name according to directory name', () => {
 				expect(route.name).toBe('sub');
 			});
@@ -71,6 +75,10 @@ describe('customised index file', () => {
 
 			it('is a Route', () => {
 				expect(route).toBeInstanceOf(Route);
+			});
+
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub2', '_index.js'));
 			});
 
 			it('has name according to directory name', () => {
@@ -115,6 +123,10 @@ describe('customised index file', () => {
 				expect(route).toBeInstanceOf(Route);
 			});
 
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', '_index.js'));
+			});
+
 			it('has name according to directory name', () => {
 				expect(route.name).toBe('sub');
 			});
@@ -146,6 +158,10 @@ describe('customised index file', () => {
 
 			it('is a Route', () => {
 				expect(route).toBeInstanceOf(Route);
+			});
+
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub2', '_index.js'));
 			});
 
 			it('has name according to directory name', () => {

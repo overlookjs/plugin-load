@@ -8,5 +8,6 @@ const {DIR_INDEX} = loadPlugin;
 const LoadRoute = Route.extend(loadPlugin);
 
 module.exports = new LoadRoute({
-	[DIR_INDEX]: '_index'
+	[DIR_INDEX]: '_index',
+	__filename
 });

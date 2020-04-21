@@ -37,6 +37,10 @@ describe('directory traversal', () => {
 				expect(root).toBeInstanceOf(Route);
 			});
 
+			it('is loaded from correct file', () => {
+				expect(root.__filename).toBe(pathJoin(fixturePath, 'index.js'));
+			});
+
 			it('has name "root"', () => {
 				expect(root.name).toBe('root');
 			});
@@ -60,6 +64,10 @@ describe('directory traversal', () => {
 
 			it('is a Route', () => {
 				expect(route).toBeInstanceOf(Route);
+			});
+
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
 			});
 
 			it('has name according to directory name', () => {
@@ -93,6 +101,10 @@ describe('directory traversal', () => {
 
 			it('is a Route', () => {
 				expect(route).toBeInstanceOf(Route);
+			});
+
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'onParent.js'));
 			});
 
 			it('has name according to file name', () => {
@@ -134,6 +146,10 @@ describe('directory traversal', () => {
 				expect(root).toBeInstanceOf(Route);
 			});
 
+			it('is loaded from correct file', () => {
+				expect(root.__filename).toBe(pathJoin(fixturePath, 'index.js'));
+			});
+
 			it('has name "root"', () => {
 				expect(root.name).toBe('root');
 			});
@@ -157,6 +173,10 @@ describe('directory traversal', () => {
 
 			it('is a Route', () => {
 				expect(route).toBeInstanceOf(Route);
+			});
+
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
 			});
 
 			it('has name according to directory name', () => {
@@ -192,6 +212,10 @@ describe('directory traversal', () => {
 				expect(route).toBeInstanceOf(Route);
 			});
 
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.js'));
+			});
+
 			it('has name according to directory name', () => {
 				expect(route.name).toBe('subSub');
 			});
@@ -223,6 +247,10 @@ describe('directory traversal', () => {
 
 			it('is a Route', () => {
 				expect(route).toBeInstanceOf(Route);
+			});
+
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'onParentParent.js'));
 			});
 
 			it('has name according to file name', () => {
@@ -264,6 +292,10 @@ describe('directory traversal', () => {
 				expect(root).toBeInstanceOf(Route);
 			});
 
+			it('is loaded from correct file', () => {
+				expect(root.__filename).toBe(pathJoin(fixturePath, 'index.js'));
+			});
+
 			it('has name "root"', () => {
 				expect(root.name).toBe('root');
 			});
@@ -287,6 +319,10 @@ describe('directory traversal', () => {
 
 			it('is a Route', () => {
 				expect(route).toBeInstanceOf(Route);
+			});
+
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'view.js'));
 			});
 
 			it('has name according to file name', () => {
@@ -322,6 +358,10 @@ describe('directory traversal', () => {
 				expect(route).toBeInstanceOf(Route);
 			});
 
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+			});
+
 			it('has name according to directory name', () => {
 				expect(route.name).toBe('sub');
 			});
@@ -353,6 +393,10 @@ describe('directory traversal', () => {
 
 			it('is a Route', () => {
 				expect(route).toBeInstanceOf(Route);
+			});
+
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'view.js'));
 			});
 
 			it('has name according to file name', () => {
@@ -394,6 +438,10 @@ describe('directory traversal', () => {
 				expect(root).toBeInstanceOf(Route);
 			});
 
+			it('is loaded from correct file', () => {
+				expect(root.__filename).toBe(pathJoin(fixturePath, 'index.js'));
+			});
+
 			it('has name "root"', () => {
 				expect(root.name).toBe('root');
 			});
@@ -417,6 +465,10 @@ describe('directory traversal', () => {
 
 			it('is a Route', () => {
 				expect(route).toBeInstanceOf(Route);
+			});
+
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'view.js'));
 			});
 
 			it('has name according to file name', () => {
@@ -452,6 +504,10 @@ describe('directory traversal', () => {
 				expect(route).toBeInstanceOf(Route);
 			});
 
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+			});
+
 			it('has name according to directory name', () => {
 				expect(route.name).toBe('sub');
 			});
@@ -483,6 +539,10 @@ describe('directory traversal', () => {
 
 			it('is a Route', () => {
 				expect(route).toBeInstanceOf(Route);
+			});
+
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'onParentPeer.js'));
 			});
 
 			it('has name according to file name', () => {

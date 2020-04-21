@@ -3,6 +3,8 @@
  * Tests
  * ------------------*/
 
+/* eslint-disable jest/no-standalone-expect */
+
 'use strict';
 
 // Modules
@@ -28,6 +30,8 @@ describe('extra files attached to routes', () => {
 		fixturePath = getFixturePath('extra files');
 		root = await loadFixture(fixturePath);
 		getChild = createGetChild(root);
+
+		expect(root.__filename).toBe(pathJoin(fixturePath, 'index.js'));
 	});
 
 	describe('root', () => {
@@ -51,7 +55,10 @@ describe('extra files attached to routes', () => {
 
 	describe('peer', () => {
 		let route;
-		beforeEach(() => { route = getChild('view'); });
+		beforeEach(() => {
+			route = getChild('view');
+			expect(route.__filename).toBe(pathJoin(fixturePath, 'view.js'));
+		});
 
 		it('route file', () => {
 			expect(route[FILES].js).toBe(pathJoin(fixturePath, 'view.js'));
@@ -73,7 +80,10 @@ describe('extra files attached to routes', () => {
 
 	describe('subfolder index', () => {
 		let route;
-		beforeEach(() => { route = getChild('sub'); });
+		beforeEach(() => {
+			route = getChild('sub');
+			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+		});
 
 		it('route file', () => {
 			expect(route[FILES].js).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
@@ -95,7 +105,10 @@ describe('extra files attached to routes', () => {
 
 	describe('subfolder peer', () => {
 		let route;
-		beforeEach(() => { route = getChild('sub', 'view'); });
+		beforeEach(() => {
+			route = getChild('sub', 'view');
+			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'view.js'));
+		});
 
 		it('route file', () => {
 			expect(route[FILES].js).toBe(pathJoin(fixturePath, 'sub', 'view.js'));
@@ -117,7 +130,10 @@ describe('extra files attached to routes', () => {
 
 	describe('2nd level subfolder index', () => {
 		let route;
-		beforeEach(() => { route = getChild('sub', 'subSub'); });
+		beforeEach(() => {
+			route = getChild('sub', 'subSub');
+			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.js'));
+		});
 
 		it('route file', () => {
 			expect(route[FILES].js).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.js'));
@@ -139,7 +155,10 @@ describe('extra files attached to routes', () => {
 
 	describe('2nd level subfolder peer', () => {
 		let route;
-		beforeEach(() => { route = getChild('sub', 'subSub', 'view'); });
+		beforeEach(() => {
+			route = getChild('sub', 'subSub', 'view');
+			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'view.js'));
+		});
 
 		it('route file', () => {
 			expect(route[FILES].js).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'view.js'));

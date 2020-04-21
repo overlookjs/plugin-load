@@ -9,4 +9,4 @@ class EditRoute extends Route {
 	}
 }
 
-module.exports = new EditRoute();
+module.exports = new EditRoute({__filename});

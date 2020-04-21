@@ -13,4 +13,4 @@ class LoadDashedIndexRoute extends LoadRoute {
 	}
 }
 
-module.exports = new LoadDashedIndexRoute();
+module.exports = new LoadDashedIndexRoute({__filename});

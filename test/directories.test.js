@@ -36,6 +36,10 @@ describe('directories', () => {
 			expect(root).toBeInstanceOf(Route);
 		});
 
+		it('is loaded from correct file', () => {
+			expect(root.__filename).toBe(pathJoin(fixturePath, 'index.js'));
+		});
+
 		it('has name "root"', () => {
 			expect(root.name).toBe('root');
 		});
@@ -60,6 +64,10 @@ describe('directories', () => {
 
 			it('is a Route', () => {
 				expect(route).toBeInstanceOf(Route);
+			});
+
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
 			});
 
 			it('has name according to directory name', () => {
@@ -93,6 +101,10 @@ describe('directories', () => {
 
 			it('is a Route', () => {
 				expect(route).toBeInstanceOf(Route);
+			});
+
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'view.js'));
 			});
 
 			it('has name according to file name', () => {
@@ -130,6 +142,10 @@ describe('directories', () => {
 				expect(route).toBeInstanceOf(Route);
 			});
 
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.js'));
+			});
+
 			it('has name according to directory name', () => {
 				expect(route.name).toBe('subSub');
 			});
@@ -161,6 +177,10 @@ describe('directories', () => {
 
 			it('is a Route', () => {
 				expect(route).toBeInstanceOf(Route);
+			});
+
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'view.js'));
 			});
 
 			it('has name according to file name', () => {

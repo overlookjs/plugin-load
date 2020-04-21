@@ -32,4 +32,4 @@ class ReactLoadRoute extends ReactRoute.extend(loadPlugin) {
 	}
 }
 
-module.exports = new ReactLoadRoute();
+module.exports = new ReactLoadRoute({__filename});

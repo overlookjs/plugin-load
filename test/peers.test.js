@@ -36,6 +36,10 @@ describe('loads peer files', () => {
 			expect(root).toBeInstanceOf(Route);
 		});
 
+		it('is loaded from correct file', () => {
+			expect(root.__filename).toBe(pathJoin(fixturePath, 'index.js'));
+		});
+
 		it('has name "root"', () => {
 			expect(root.name).toBe('root');
 		});
@@ -60,6 +64,10 @@ describe('loads peer files', () => {
 
 			it('is a Route', () => {
 				expect(route).toBeInstanceOf(Route);
+			});
+
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'view.js'));
 			});
 
 			it('has name according to file name', () => {
@@ -95,6 +103,10 @@ describe('loads peer files', () => {
 				expect(route).toBeInstanceOf(Route);
 			});
 
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'edit.js'));
+			});
+
 			it('has name according to file name', () => {
 				expect(route.name).toBe('edit');
 			});
@@ -126,6 +138,10 @@ describe('loads peer files', () => {
 
 			it('is a Route', () => {
 				expect(route).toBeInstanceOf(Route);
+			});
+
+			it('is loaded from correct file', () => {
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'delete.js'));
 			});
 
 			it('has name according to file name', () => {

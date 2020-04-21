@@ -34,6 +34,10 @@ describe('loads single route file and it', () => {
 		expect(root).toBeInstanceOf(Route);
 	});
 
+	it('is loaded from correct file', () => {
+		expect(root.__filename).toBe(pathJoin(fixturePath, 'index.js'));
+	});
+
 	it('has name "root"', () => {
 		expect(root.name).toBe('root');
 	});

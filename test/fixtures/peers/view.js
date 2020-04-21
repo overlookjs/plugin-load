@@ -2,4 +2,4 @@
 
 const Route = require('@overlook/route');
 
-module.exports = new Route();
+module.exports = new Route({__filename});
