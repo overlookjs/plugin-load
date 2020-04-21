@@ -13,7 +13,7 @@ Part of the [Overlook framework](https://overlookjs.github.io/).
 
 ### Introduction
 
-[Overlook](https://overlookjs.github.io/) conceptualizes routes as a tree, with routes connected in a parent-child relationship.
+[Overlook](https://overlookjs.github.io/) conceptualizes routes as a tree, with routes connected to each other in parent-child relationships.
 
 For example, `/bands/albums`'s parent is `/bands`, and in turn `/bands`'s parent is `/`. `/bands` has `/bands/albums` as it's child, along with e.g. `/bands/members`.
 
