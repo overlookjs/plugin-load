@@ -7,12 +7,12 @@
 
 'use strict';
 
-/*
- * Throw any unhandled promise rejections
- */
+// Throw any unhandled promise rejections
 process.on('unhandledRejection', (err) => {
 	throw err;
 });
+
+// Exports
 
 /*
  * Reset require cache before each test.
