@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.2
+
+Features:
+
+* ESM support
+
+Dev:
+
+* Update dev dependencies
+
 ## 0.1.1
 
 Improvements:
