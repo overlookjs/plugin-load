@@ -28,7 +28,7 @@ const loadRoutes = require('@overlook/load-routes');
 const router = await loadRoutes( __dirname + '/routes' );
 ```
 
-`loadRoutes` looks for a file called `index.js` or `index.route.js` in that directory and will load it as the root route.
+`loadRoutes` looks for a file called `index.js` or `index.route.js` (or `.mjs` / `.cjs` variants) in that directory and will load it as the root route.
 
 The root route should be extended with this plugin to turn it into a "loader", and then it can define how further files should be loaded.
 
@@ -316,6 +316,12 @@ class HtmlIndexRoute extends HtmlLoadRoute {
 
 NB It doesn't hurt for peer routes (i.e. routes which are not `index`) to use `plugin-load` too. It just won't do anything - loading is only performed by index routes.
 
+### ESMAScript modules support (ESM)
+
+On versions of NodeJS which support ESM modules (Node 13+), route files can be ESM modules.
+
+Either name the route files with `.mjs` / `.route.mjs` extension, or place a `package.json` file in the routes folder containing `{"type": "module"}`. See [NodeJS docs](https://nodejs.org/dist/latest-v14.x/docs/api/esm.html#esm_ecmascript_modules) for more info on ESM support in NodeJS.
+
 ### Customization
 
 You can also customize loading behaviour with a few other properties/methods.
@@ -344,16 +350,16 @@ NB `[DIR_INDEX]` should not include file extension.
 
 #### Set file extensions for route files
 
-By default, `plugin-load` will identify any files with extension `.route.js` or just `.js` as route files. Override this with `[ROUTE_EXTS]` property or `[GET_ROUTE_EXTS]()` method.
+By default, `plugin-load` will identify any files with extension `.route.{js|mjs|cjs}` or just `.js` / `.mjs` / `.cjs` as route files. Override this behaviour with `[ROUTE_EXTS]` property or `[GET_ROUTE_EXTS]()` method.
 
-Default value of `[ROUTE_EXTS]` is `[ 'route.js', 'js' ]`.
+Default value of `[ROUTE_EXTS]` is `[ 'route.js', 'route.mjs', 'route.cjs', 'js', 'mjs', 'cjs' ]`.
 
-If, for example, you prefer to use `.cjs`:
+If, for example, want to only use `.route.js`:
 
 ```js
 const { ROUTE_EXTS } = require('@overlook/plugin-load');
 modules.export = new Route( {
-  [ROUTE_EXTS]: ['cjs']
+  [ROUTE_EXTS]: ['route.js']
 } );
 ```
 
@@ -361,7 +367,7 @@ modules.export = new Route( {
 const { GET_ROUTE_EXTS } = require('@overlook/plugin-load');
 class MyRoute extends Route {
   [GET_ROUTE_EXTS]() {
-    return ['cjs'];
+    return ['route.js'];
   }
 }
 ```

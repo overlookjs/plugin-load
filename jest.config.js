@@ -14,5 +14,7 @@ module.exports = {
 	setupFilesAfterEnv: ['jest-extended'],
 	moduleNameMapper: {
 		'^@overlook/plugin-load$': '<rootDir>/index.js'
-	}
+	},
+	// Skip ESM test - it's run with mocha instead
+	testPathIgnorePatterns: ['<rootDir>/test/esm.test.js']
 };
