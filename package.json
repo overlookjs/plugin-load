@@ -20,7 +20,7 @@
     "@overlook/plugin": "^0.2.3",
     "@overlook/route": "^0.5.1",
     "fs-extra": "^9.0.0",
-    "tiny-invariant": "^1.1.0"
+    "simple-invariant": "^2.0.0"
   },
   "devDependencies": {
     "@overlookmotel/eslint-config": "^7.1.2",
