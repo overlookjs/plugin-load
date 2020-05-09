@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.3
+
+Features:
+
+* ESM export
+
+Dependencies:
+
+* Update `@overlook/plugin` + `@overlook/route`
+* Replace `tiny-invariant` with `simple-invariant`
+
+Dev:
+
+* Update dev dependencies
+
 ## 0.1.2
 
 Features:
