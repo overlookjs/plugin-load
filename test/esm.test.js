@@ -31,12 +31,12 @@ global.jest = {resetModules() {}};
 // Tests
 
 // Refresh Route class and load plugin symbols before each test
-let Route, PARENT_PATH, LOAD_PATH, LOAD_DIR_PATH;
+let Route, PARENT_PATH, SRC_PATH, SRC_DIR_PATH;
 beforeEach(() => {
 	// Only load once - no way to clear the import cache
 	if (Route) return;
 	({Route} = modules);
-	({PARENT_PATH, LOAD_PATH, LOAD_DIR_PATH} = modules.loadPlugin);
+	({PARENT_PATH, SRC_PATH, SRC_DIR_PATH} = modules.loadPlugin);
 });
 
 // Tests
@@ -70,12 +70,12 @@ describeIfEsmSupported('loads route files with .mjs extension', () => {
 			expect(root.children).toBeArrayOfSize(2);
 		});
 
-		it('has [LOAD_PATH] set to file path', () => {
-			expect(root[LOAD_PATH]).toBe(pathJoin(fixturePath, 'index.mjs'));
+		it('has [SRC_PATH] set to file path', () => {
+			expect(root[SRC_PATH]).toBe(pathJoin(fixturePath, 'index.mjs'));
 		});
 
-		it('has [LOAD_DIR_PATH] set to dir path', () => {
-			expect(root[LOAD_DIR_PATH]).toBe(fixturePath);
+		it('has [SRC_DIR_PATH] set to dir path', () => {
+			expect(root[SRC_DIR_PATH]).toBe(fixturePath);
 		});
 	});
 
@@ -107,12 +107,12 @@ describeIfEsmSupported('loads route files with .mjs extension', () => {
 			expect(route.children).toBeArrayOfSize(0);
 		});
 
-		it('has [LOAD_PATH] set to file path', () => {
-			expect(route[LOAD_PATH]).toBe(pathJoin(fixturePath, 'view.mjs'));
+		it('has [SRC_PATH] set to file path', () => {
+			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'view.mjs'));
 		});
 
-		it('has [LOAD_DIR_PATH] set to dir path', () => {
-			expect(route[LOAD_DIR_PATH]).toBe(fixturePath);
+		it('has [SRC_DIR_PATH] set to dir path', () => {
+			expect(route[SRC_DIR_PATH]).toBe(fixturePath);
 		});
 	});
 
@@ -144,12 +144,12 @@ describeIfEsmSupported('loads route files with .mjs extension', () => {
 			expect(route.children).toBeArrayOfSize(0);
 		});
 
-		it('has [LOAD_PATH] set to file path', () => {
-			expect(route[LOAD_PATH]).toBe(pathJoin(fixturePath, 'sub', 'index.mjs'));
+		it('has [SRC_PATH] set to file path', () => {
+			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'index.mjs'));
 		});
 
-		it('has [LOAD_DIR_PATH] set to dir path', () => {
-			expect(route[LOAD_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
+		it('has [SRC_DIR_PATH] set to dir path', () => {
+			expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
 		});
 	});
 });
@@ -181,12 +181,12 @@ describeIfEsmSupported('loads route files with .js extension', () => {
 			expect(root.children).toBeArrayOfSize(2);
 		});
 
-		it('has [LOAD_PATH] set to file path', () => {
-			expect(root[LOAD_PATH]).toBe(pathJoin(fixturePath, 'index.js'));
+		it('has [SRC_PATH] set to file path', () => {
+			expect(root[SRC_PATH]).toBe(pathJoin(fixturePath, 'index.js'));
 		});
 
-		it('has [LOAD_DIR_PATH] set to dir path', () => {
-			expect(root[LOAD_DIR_PATH]).toBe(fixturePath);
+		it('has [SRC_DIR_PATH] set to dir path', () => {
+			expect(root[SRC_DIR_PATH]).toBe(fixturePath);
 		});
 	});
 
@@ -218,12 +218,12 @@ describeIfEsmSupported('loads route files with .js extension', () => {
 			expect(route.children).toBeArrayOfSize(0);
 		});
 
-		it('has [LOAD_PATH] set to file path', () => {
-			expect(route[LOAD_PATH]).toBe(pathJoin(fixturePath, 'view.js'));
+		it('has [SRC_PATH] set to file path', () => {
+			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'view.js'));
 		});
 
-		it('has [LOAD_DIR_PATH] set to dir path', () => {
-			expect(route[LOAD_DIR_PATH]).toBe(fixturePath);
+		it('has [SRC_DIR_PATH] set to dir path', () => {
+			expect(route[SRC_DIR_PATH]).toBe(fixturePath);
 		});
 	});
 
@@ -255,12 +255,12 @@ describeIfEsmSupported('loads route files with .js extension', () => {
 			expect(route.children).toBeArrayOfSize(0);
 		});
 
-		it('has [LOAD_PATH] set to file path', () => {
-			expect(route[LOAD_PATH]).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+		it('has [SRC_PATH] set to file path', () => {
+			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
 		});
 
-		it('has [LOAD_DIR_PATH] set to dir path', () => {
-			expect(route[LOAD_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
+		it('has [SRC_DIR_PATH] set to dir path', () => {
+			expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
 		});
 	});
 });

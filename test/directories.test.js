@@ -17,10 +17,10 @@ const modules = require('./support/index.js');
 // Tests
 
 // Refresh Route class and load plugin symbols before each test
-let Route, PARENT_PATH, LOAD_PATH, LOAD_DIR_PATH;
+let Route, PARENT_PATH, SRC_PATH, SRC_DIR_PATH;
 beforeEach(() => {
 	({Route} = modules);
-	({PARENT_PATH, LOAD_PATH, LOAD_DIR_PATH} = modules.loadPlugin);
+	({PARENT_PATH, SRC_PATH, SRC_DIR_PATH} = modules.loadPlugin);
 });
 
 describe('directories', () => {
@@ -48,12 +48,12 @@ describe('directories', () => {
 			expect(root.children).toBeArrayOfSize(1);
 		});
 
-		it('has [LOAD_PATH] set to file path', () => {
-			expect(root[LOAD_PATH]).toBe(pathJoin(fixturePath, 'index.js'));
+		it('has [SRC_PATH] set to file path', () => {
+			expect(root[SRC_PATH]).toBe(pathJoin(fixturePath, 'index.js'));
 		});
 
-		it('has [LOAD_DIR_PATH] set to dir path', () => {
-			expect(root[LOAD_DIR_PATH]).toBe(fixturePath);
+		it('has [SRC_DIR_PATH] set to dir path', () => {
+			expect(root[SRC_DIR_PATH]).toBe(fixturePath);
 		});
 	});
 
@@ -86,12 +86,12 @@ describe('directories', () => {
 				expect(route.children).toBeArrayOfSize(2);
 			});
 
-			it('has [LOAD_PATH] set to file path', () => {
-				expect(route[LOAD_PATH]).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+			it('has [SRC_PATH] set to file path', () => {
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
 			});
 
-			it('has [LOAD_DIR_PATH] set to dir path', () => {
-				expect(route[LOAD_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
+			it('has [SRC_DIR_PATH] set to dir path', () => {
+				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
 			});
 		});
 
@@ -123,12 +123,12 @@ describe('directories', () => {
 				expect(route.children).toBeArrayOfSize(0);
 			});
 
-			it('has [LOAD_PATH] set to file path', () => {
-				expect(route[LOAD_PATH]).toBe(pathJoin(fixturePath, 'sub', 'view.js'));
+			it('has [SRC_PATH] set to file path', () => {
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'view.js'));
 			});
 
-			it('has [LOAD_DIR_PATH] set to dir path', () => {
-				expect(route[LOAD_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
+			it('has [SRC_DIR_PATH] set to dir path', () => {
+				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
 			});
 		});
 	});
@@ -162,12 +162,12 @@ describe('directories', () => {
 				expect(route.children).toBeArrayOfSize(1);
 			});
 
-			it('has [LOAD_PATH] set to file path', () => {
-				expect(route[LOAD_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.js'));
+			it('has [SRC_PATH] set to file path', () => {
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.js'));
 			});
 
-			it('has [LOAD_DIR_PATH] set to dir path', () => {
-				expect(route[LOAD_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub'));
+			it('has [SRC_DIR_PATH] set to dir path', () => {
+				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub'));
 			});
 		});
 
@@ -199,12 +199,12 @@ describe('directories', () => {
 				expect(route.children).toBeArrayOfSize(0);
 			});
 
-			it('has [LOAD_PATH] set to file path', () => {
-				expect(route[LOAD_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'view.js'));
+			it('has [SRC_PATH] set to file path', () => {
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'view.js'));
 			});
 
-			it('has [LOAD_DIR_PATH] set to dir path', () => {
-				expect(route[LOAD_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub'));
+			it('has [SRC_DIR_PATH] set to dir path', () => {
+				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub'));
 			});
 		});
 	});

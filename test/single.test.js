@@ -17,10 +17,10 @@ const modules = require('./support/index.js');
 // Tests
 
 // Refresh Route class and load plugin symbols before each test
-let Route, LOAD_PATH, LOAD_DIR_PATH;
+let Route, SRC_PATH, SRC_DIR_PATH;
 beforeEach(() => {
 	({Route} = modules);
-	({LOAD_PATH, LOAD_DIR_PATH} = modules.loadPlugin);
+	({SRC_PATH, SRC_DIR_PATH} = modules.loadPlugin);
 });
 
 describe('loads single route file and it', () => {
@@ -46,11 +46,11 @@ describe('loads single route file and it', () => {
 		expect(root.children).toBeArrayOfSize(0);
 	});
 
-	it('has [LOAD_PATH] set to file path', () => {
-		expect(root[LOAD_PATH]).toBe(pathJoin(fixturePath, 'index.js'));
+	it('has [SRC_PATH] set to file path', () => {
+		expect(root[SRC_PATH]).toBe(pathJoin(fixturePath, 'index.js'));
 	});
 
-	it('has [LOAD_DIR_PATH] set to dir path', () => {
-		expect(root[LOAD_DIR_PATH]).toBe(fixturePath);
+	it('has [SRC_DIR_PATH] set to dir path', () => {
+		expect(root[SRC_DIR_PATH]).toBe(fixturePath);
 	});
 });
