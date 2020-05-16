@@ -25,15 +25,15 @@ beforeEach(() => {
 
 describe('extra files create routes', () => {
 	describe('via returning Route class from [IDENTIFY_ROUTE_FILE]', () => {
-		runTests('via class');
+		describeTests('via class');
 	});
 
 	describe('via returning Route class instance from [IDENTIFY_ROUTE_FILE]', () => {
-		runTests('via route');
+		describeTests('via route');
 	});
 });
 
-function runTests(fixtureName) {
+function describeTests(fixtureName) {
 	let fixturePath, root, getChild;
 	beforeEach(async () => {
 		fixturePath = getFixturePath('created routes', fixtureName);
