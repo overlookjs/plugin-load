@@ -24,9 +24,19 @@ beforeEach(() => {
 });
 
 describe('extra files create routes', () => {
+	describe('via returning Route class from [IDENTIFY_ROUTE_FILE]', () => {
+		runTests('via class');
+	});
+
+	describe('via returning Route class instance from [IDENTIFY_ROUTE_FILE]', () => {
+		runTests('via route');
+	});
+});
+
+function runTests(fixtureName) {
 	let fixturePath, root, getChild;
 	beforeEach(async () => {
-		fixturePath = getFixturePath('created routes');
+		fixturePath = getFixturePath('created routes', fixtureName);
 		root = await loadFixture(fixturePath);
 		getChild = createGetChild(root);
 	});
@@ -428,4 +438,4 @@ describe('extra files create routes', () => {
 			expect(route[FILES]).toContainAllKeys(['jsx']);
 		});
 	});
-});
+}

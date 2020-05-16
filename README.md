@@ -248,6 +248,8 @@ Often, you don't need actual route files, and can use [ancillary files](#ancilla
 
 If all your routes just serve HTML files, you can customise the loader to create a route for each HTML file, by extending the `[IDENTIFY_ROUTE_FILE]()` method.
 
+`[IDENTIFY_ROUTE_FILE]()` can return a Route object or Route class.
+
 ```js
 // routes/index.js
 const Route = require('@overlook/route');
@@ -273,7 +275,7 @@ class HtmlIndexRoute extends HtmlLoadRoute {
     if ( identified ) return identified;
 
     // Create a route using HtmlRoute class for HTML files
-    if ( exts.html ) return { Class: HtmlRoute };
+    if ( exts.html ) return HtmlRoute;
 
     // No HTML file found
     return null;
@@ -304,8 +306,8 @@ class HtmlIndexRoute extends HtmlLoadRoute {
 
     // Create a route using HtmlRoute/HtmlIndexRoute class for HTML files
     if ( exts.html ) {
-      if ( isIndex ) return { Class: HtmlIndexRoute };
-      return { Class: HtmlRoute };
+      if ( isIndex ) return HtmlIndexRoute;
+      return HtmlRoute;
     }
 
     // No HTML file found
