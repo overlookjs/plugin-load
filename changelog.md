@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.3.0
+
+Breaking changes:
+
+* `[IDENTIFY_ROUTE_FILE]` return Route, Route class, or ext string
+
+Features:
+
+* `[SRC_FILENAME]` prop
+
+Bug fixes:
+
+* Handle when `[IDENTIFY_ROUTE_FILE]` returns null
+* `[SRC_PATH]` undefined if not from file [fix]
+* Do not over-write existing name prop
+
+Improvements:
+
+* Validate route class returned from `[IDENTIFY_ROUTE_FILE]`
+* Methods return undefined by default
+
+Refactor:
+
+* Replace `invariant` with `assert`
+
 ## 0.2.0
 
 Breaking changes:
