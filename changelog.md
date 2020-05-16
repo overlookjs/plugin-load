@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.0
+
+Breaking changes:
+
+* Rename `LOAD_PATH` + `LOAD_DIR_PATH` to `SRC_PATH` + `SRC_DIR_PATH`
+
+Deps:
+
+* Update `@overlook/plugin` dependency
+
+Dev:
+
+* Update dev dependencies
+
 ## 0.1.3
 
 Features:
