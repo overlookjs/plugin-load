@@ -246,7 +246,7 @@ console.log( route[FILES] );
 
 Often, you don't need actual route files, and can use [ancillary files](#ancillary-files) only.
 
-If all your routes just serve HTML files, you can customise the loader to create a route for each HTML file, by extending the `[IDENTIFY_ROUTE_FILE]()` method.
+If all your routes just serve HTML files, you can customize the loader to create a route for each HTML file, by extending the `[IDENTIFY_ROUTE_FILE]()` method.
 
 `[IDENTIFY_ROUTE_FILE]()` can return a Route object or Route class.
 
@@ -352,7 +352,16 @@ NB `[DIR_INDEX]` should not include file extension.
 
 #### Set file extensions for route files
 
-By default, `plugin-load` will identify any files with extension `.route.{js|mjs|cjs}` or just `.js` / `.mjs` / `.cjs` as route files. Override this behaviour with `[ROUTE_EXTS]` property or `[GET_ROUTE_EXTS]()` method.
+By default, `plugin-load` will identify any files with the following extensions as route files:
+
+* `.route.js`
+* `.route.mjs`
+* `.route.cjs`
+* `.js`
+* `.mjs`
+* `.cjs`
+
+Override this behaviour with `[ROUTE_EXTS]` property or `[GET_ROUTE_EXTS]()` method.
 
 Default value of `[ROUTE_EXTS]` is `[ 'route.js', 'route.mjs', 'route.cjs', 'js', 'mjs', 'cjs' ]`.
 
