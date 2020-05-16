@@ -81,8 +81,8 @@ describe('extra files create routes', () => {
 			expect(route.children).toBeArrayOfSize(1);
 		});
 
-		it('has [SRC_PATH] set to file path with class name', () => {
-			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, '<ReactRoute>'));
+		it('has [SRC_PATH] undefined', () => {
+			expect(route[SRC_PATH]).toBeUndefined();
 		});
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -123,8 +123,8 @@ describe('extra files create routes', () => {
 			expect(route.children).toBeArrayOfSize(0);
 		});
 
-		it('has [SRC_PATH] set to file path with class name', () => {
-			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, '<ReactEditRoute>'));
+		it('has [SRC_PATH] undefined', () => {
+			expect(route[SRC_PATH]).toBeUndefined();
 		});
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -165,8 +165,8 @@ describe('extra files create routes', () => {
 			expect(route.children).toBeArrayOfSize(2);
 		});
 
-		it('has [SRC_PATH] set to file path with class name', () => {
-			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', '<ReactLoadRoute>'));
+		it('has [SRC_PATH] undefined', () => {
+			expect(route[SRC_PATH]).toBeUndefined();
 		});
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -207,8 +207,8 @@ describe('extra files create routes', () => {
 			expect(route.children).toBeArrayOfSize(1);
 		});
 
-		it('has [SRC_PATH] set to file path with class name', () => {
-			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', '<ReactRoute>'));
+		it('has [SRC_PATH] undefined', () => {
+			expect(route[SRC_PATH]).toBeUndefined();
 		});
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -249,8 +249,8 @@ describe('extra files create routes', () => {
 			expect(route.children).toBeArrayOfSize(0);
 		});
 
-		it('has [SRC_PATH] set to file path with class name', () => {
-			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', '<ReactEditRoute>'));
+		it('has [SRC_PATH] undefined', () => {
+			expect(route[SRC_PATH]).toBeUndefined();
 		});
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -291,8 +291,8 @@ describe('extra files create routes', () => {
 			expect(route.children).toBeArrayOfSize(1);
 		});
 
-		it('has [SRC_PATH] set to file path with class name', () => {
-			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub', '<ReactLoadRoute>'));
+		it('has [SRC_PATH] undefined', () => {
+			expect(route[SRC_PATH]).toBeUndefined();
 		});
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -333,8 +333,8 @@ describe('extra files create routes', () => {
 			expect(route.children).toBeArrayOfSize(1);
 		});
 
-		it('has [SRC_PATH] set to file path with class name', () => {
-			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub', '<ReactRoute>'));
+		it('has [SRC_PATH] undefined', () => {
+			expect(route[SRC_PATH]).toBeUndefined();
 		});
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -375,8 +375,8 @@ describe('extra files create routes', () => {
 			expect(route.children).toBeArrayOfSize(0);
 		});
 
-		it('has [SRC_PATH] set to file path with class name', () => {
-			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub', '<ReactEditRoute>'));
+		it('has [SRC_PATH] undefined', () => {
+			expect(route[SRC_PATH]).toBeUndefined();
 		});
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
