@@ -17,10 +17,10 @@ const modules = require('./support/index.js');
 // Tests
 
 // Refresh Route class and load plugin symbols before each test
-let Route, SRC_PATH, SRC_DIR_PATH;
+let Route, SRC_PATH, SRC_DIR_PATH, SRC_FILENAME;
 beforeEach(() => {
 	({Route} = modules);
-	({SRC_PATH, SRC_DIR_PATH} = modules.loadPlugin);
+	({SRC_PATH, SRC_DIR_PATH, SRC_FILENAME} = modules.loadPlugin);
 });
 
 describe('does not over-write existing name prop', () => {
@@ -55,6 +55,10 @@ describe('does not over-write existing name prop', () => {
 		it('has [SRC_DIR_PATH] set to dir path', () => {
 			expect(root[SRC_DIR_PATH]).toBe(fixturePath);
 		});
+
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(root[SRC_FILENAME]).toBe('index');
+		});
 	});
 
 	describe('peer', () => {
@@ -84,6 +88,10 @@ describe('does not over-write existing name prop', () => {
 		it('has [SRC_DIR_PATH] set to dir path', () => {
 			expect(route[SRC_DIR_PATH]).toBe(fixturePath);
 		});
+
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(route[SRC_FILENAME]).toBe('view');
+		});
 	});
 
 	describe('directory', () => {
@@ -112,6 +120,10 @@ describe('does not over-write existing name prop', () => {
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
 			expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
+		});
+
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(route[SRC_FILENAME]).toBe('index');
 		});
 	});
 });

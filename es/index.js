@@ -25,5 +25,6 @@ export const {
 	LOAD_FILES,
 	LOAD_DIRS,
 	SRC_PATH,
-	SRC_DIR_PATH
+	SRC_DIR_PATH,
+	SRC_FILENAME
 } = loadPlugin;

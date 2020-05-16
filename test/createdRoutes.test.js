@@ -17,10 +17,10 @@ const modules = require('./support/index.js');
 // Tests
 
 // Refresh Route class and load plugin symbols before each test
-let Route, SRC_PATH, SRC_DIR_PATH, PARENT_PATH, FILES;
+let Route, SRC_PATH, SRC_DIR_PATH, SRC_FILENAME, PARENT_PATH, FILES;
 beforeEach(() => {
 	({Route} = modules);
-	({SRC_PATH, SRC_DIR_PATH, PARENT_PATH, FILES} = modules.loadPlugin);
+	({SRC_PATH, SRC_DIR_PATH, PARENT_PATH, SRC_FILENAME, FILES} = modules.loadPlugin);
 });
 
 describe('extra files create routes', () => {
@@ -55,6 +55,10 @@ describe('extra files create routes', () => {
 		it('has [SRC_DIR_PATH] set to dir path', () => {
 			expect(root[SRC_DIR_PATH]).toBe(fixturePath);
 		});
+
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(root[SRC_FILENAME]).toBe('index');
+		});
 	});
 
 	describe('peer', () => {
@@ -87,6 +91,10 @@ describe('extra files create routes', () => {
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
 			expect(route[SRC_DIR_PATH]).toBe(fixturePath);
+		});
+
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(route[SRC_FILENAME]).toBe('view');
 		});
 
 		it('file with another ext', () => {
@@ -131,6 +139,10 @@ describe('extra files create routes', () => {
 			expect(route[SRC_DIR_PATH]).toBe(fixturePath);
 		});
 
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(route[SRC_FILENAME]).toBe('edit');
+		});
+
 		it('file with another ext', () => {
 			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'edit.jsx'));
 		});
@@ -171,6 +183,10 @@ describe('extra files create routes', () => {
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
 			expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
+		});
+
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(route[SRC_FILENAME]).toBe('index');
 		});
 
 		it('file with another ext', () => {
@@ -215,6 +231,10 @@ describe('extra files create routes', () => {
 			expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
 		});
 
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(route[SRC_FILENAME]).toBe('view');
+		});
+
 		it('file with another ext', () => {
 			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'sub', 'view.jsx'));
 		});
@@ -255,6 +275,10 @@ describe('extra files create routes', () => {
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
 			expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
+		});
+
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(route[SRC_FILENAME]).toBe('edit');
 		});
 
 		it('file with another ext', () => {
@@ -299,6 +323,10 @@ describe('extra files create routes', () => {
 			expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub'));
 		});
 
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(route[SRC_FILENAME]).toBe('index');
+		});
+
 		it('file with another ext', () => {
 			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.jsx'));
 		});
@@ -341,6 +369,10 @@ describe('extra files create routes', () => {
 			expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub'));
 		});
 
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(route[SRC_FILENAME]).toBe('view');
+		});
+
 		it('file with another ext', () => {
 			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'view.jsx'));
 		});
@@ -381,6 +413,10 @@ describe('extra files create routes', () => {
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
 			expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub'));
+		});
+
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(route[SRC_FILENAME]).toBe('edit');
 		});
 
 		it('file with another ext', () => {

@@ -17,10 +17,10 @@ const modules = require('./support/index.js');
 // Tests
 
 // Refresh Route class and load plugin symbols before each test
-let Route, PARENT_PATH, SRC_PATH, SRC_DIR_PATH;
+let Route, PARENT_PATH, SRC_PATH, SRC_DIR_PATH, SRC_FILENAME;
 beforeEach(() => {
 	({Route} = modules);
-	({PARENT_PATH, SRC_PATH, SRC_DIR_PATH} = modules.loadPlugin);
+	({PARENT_PATH, SRC_PATH, SRC_DIR_PATH, SRC_FILENAME} = modules.loadPlugin);
 });
 
 describe('customised index file', () => {
@@ -67,6 +67,10 @@ describe('customised index file', () => {
 			it('has [SRC_DIR_PATH] set to dir path', () => {
 				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
 			});
+
+			it('has [SRC_FILENAME] set to file name', () => {
+				expect(route[SRC_FILENAME]).toBe('_index');
+			});
 		});
 
 		describe('2nd sub folder', () => {
@@ -103,6 +107,10 @@ describe('customised index file', () => {
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
 				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub2'));
+			});
+
+			it('has [SRC_FILENAME] set to file name', () => {
+				expect(route[SRC_FILENAME]).toBe('_index');
 			});
 		});
 	});
@@ -150,6 +158,10 @@ describe('customised index file', () => {
 			it('has [SRC_DIR_PATH] set to dir path', () => {
 				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
 			});
+
+			it('has [SRC_FILENAME] set to file name', () => {
+				expect(route[SRC_FILENAME]).toBe('_index');
+			});
 		});
 
 		describe('2nd sub folder', () => {
@@ -186,6 +198,10 @@ describe('customised index file', () => {
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
 				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub2'));
+			});
+
+			it('has [SRC_FILENAME] set to file name', () => {
+				expect(route[SRC_FILENAME]).toBe('_index');
 			});
 		});
 	});

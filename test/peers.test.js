@@ -17,10 +17,10 @@ const modules = require('./support/index.js');
 // Tests
 
 // Refresh Route class and load plugin symbols before each test
-let Route, PARENT_PATH, SRC_PATH, SRC_DIR_PATH;
+let Route, PARENT_PATH, SRC_PATH, SRC_DIR_PATH, SRC_FILENAME;
 beforeEach(() => {
 	({Route} = modules);
-	({PARENT_PATH, SRC_PATH, SRC_DIR_PATH} = modules.loadPlugin);
+	({PARENT_PATH, SRC_PATH, SRC_DIR_PATH, SRC_FILENAME} = modules.loadPlugin);
 });
 
 describe('loads peer files', () => {
@@ -54,6 +54,10 @@ describe('loads peer files', () => {
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
 			expect(root[SRC_DIR_PATH]).toBe(fixturePath);
+		});
+
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(root[SRC_FILENAME]).toBe('index');
 		});
 	});
 
@@ -93,6 +97,10 @@ describe('loads peer files', () => {
 			it('has [SRC_DIR_PATH] set to dir path', () => {
 				expect(route[SRC_DIR_PATH]).toBe(fixturePath);
 			});
+
+			it('has [SRC_FILENAME] set to file name', () => {
+				expect(route[SRC_FILENAME]).toBe('view');
+			});
 		});
 
 		describe('with [PARENT_PATH] as peer', () => {
@@ -130,6 +138,10 @@ describe('loads peer files', () => {
 			it('has [SRC_DIR_PATH] set to dir path', () => {
 				expect(route[SRC_DIR_PATH]).toBe(fixturePath);
 			});
+
+			it('has [SRC_FILENAME] set to file name', () => {
+				expect(route[SRC_FILENAME]).toBe('edit');
+			});
 		});
 
 		describe('with [GET_PARENT_PATH] which returns peer', () => {
@@ -166,6 +178,10 @@ describe('loads peer files', () => {
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
 				expect(route[SRC_DIR_PATH]).toBe(fixturePath);
+			});
+
+			it('has [SRC_FILENAME] set to file name', () => {
+				expect(route[SRC_FILENAME]).toBe('delete');
 			});
 		});
 	});

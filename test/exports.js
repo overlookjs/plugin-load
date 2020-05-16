@@ -18,7 +18,7 @@ module.exports = function itExports(loadPlugin) {
 			'FILES',
 			'GET_DIR_INDEX', 'GET_ROUTE_EXTS', 'GET_PARENT_PATH', 'IDENTIFY_ROUTE_FILE',
 			'LOAD_DIR', 'LOAD_FILE', 'ATTACH_FILE', 'LOAD_FILES', 'LOAD_DIRS',
-			'SRC_PATH', 'SRC_DIR_PATH'
+			'SRC_PATH', 'SRC_DIR_PATH', 'SRC_FILENAME'
 		])('%s', (key) => {
 			expect(typeof loadPlugin[key]).toBe('symbol');
 		});

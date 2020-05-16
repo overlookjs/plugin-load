@@ -31,12 +31,12 @@ global.jest = {resetModules() {}};
 // Tests
 
 // Refresh Route class and load plugin symbols before each test
-let Route, PARENT_PATH, SRC_PATH, SRC_DIR_PATH;
+let Route, PARENT_PATH, SRC_PATH, SRC_DIR_PATH, SRC_FILENAME;
 beforeEach(() => {
 	// Only load once - no way to clear the import cache
 	if (Route) return;
 	({Route} = modules);
-	({PARENT_PATH, SRC_PATH, SRC_DIR_PATH} = modules.loadPlugin);
+	({PARENT_PATH, SRC_PATH, SRC_DIR_PATH, SRC_FILENAME} = modules.loadPlugin);
 });
 
 // Tests
@@ -77,6 +77,10 @@ describeIfEsmSupported('loads route files with .mjs extension', () => {
 		it('has [SRC_DIR_PATH] set to dir path', () => {
 			expect(root[SRC_DIR_PATH]).toBe(fixturePath);
 		});
+
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(root[SRC_FILENAME]).toBe('index');
+		});
 	});
 
 	describe('files in same directory', () => {
@@ -113,6 +117,10 @@ describeIfEsmSupported('loads route files with .mjs extension', () => {
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
 			expect(route[SRC_DIR_PATH]).toBe(fixturePath);
+		});
+
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(route[SRC_FILENAME]).toBe('view');
 		});
 	});
 
@@ -151,6 +159,10 @@ describeIfEsmSupported('loads route files with .mjs extension', () => {
 		it('has [SRC_DIR_PATH] set to dir path', () => {
 			expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
 		});
+
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(route[SRC_FILENAME]).toBe('index');
+		});
 	});
 });
 
@@ -187,6 +199,10 @@ describeIfEsmSupported('loads route files with .js extension', () => {
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
 			expect(root[SRC_DIR_PATH]).toBe(fixturePath);
+		});
+
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(root[SRC_FILENAME]).toBe('index');
 		});
 	});
 
@@ -225,6 +241,10 @@ describeIfEsmSupported('loads route files with .js extension', () => {
 		it('has [SRC_DIR_PATH] set to dir path', () => {
 			expect(route[SRC_DIR_PATH]).toBe(fixturePath);
 		});
+
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(route[SRC_FILENAME]).toBe('view');
+		});
 	});
 
 	describe('files in sub directory', () => {
@@ -261,6 +281,10 @@ describeIfEsmSupported('loads route files with .js extension', () => {
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
 			expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub'));
+		});
+
+		it('has [SRC_FILENAME] set to file name', () => {
+			expect(route[SRC_FILENAME]).toBe('index');
 		});
 	});
 });
