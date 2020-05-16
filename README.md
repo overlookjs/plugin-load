@@ -278,7 +278,7 @@ class HtmlIndexRoute extends HtmlLoadRoute {
     if ( exts.html ) return HtmlRoute;
 
     // No HTML file found
-    return null;
+    return undefined;
   }
 }
 
@@ -311,7 +311,7 @@ class HtmlIndexRoute extends HtmlLoadRoute {
     }
 
     // No HTML file found
-    return null;
+    return undefined;
   }
 }
 ```
