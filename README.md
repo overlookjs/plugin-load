@@ -318,6 +318,46 @@ class HtmlIndexRoute extends HtmlLoadRoute {
 
 NB It doesn't hurt for peer routes (i.e. routes which are not `index`) to use `plugin-load` too. It just won't do anything - loading is only performed by index routes.
 
+#### Implicit routes from folders without an index file
+
+You can also create implicit routes for folders which don't have an index file. This could be useful for serving an index page which lists all the files in that folder, for example.
+
+Just check for `isIndex === true` and `exts` being an empty object.
+
+```js
+class HtmlIndexRoute extends HtmlLoadRoute {
+  [IDENTIFY_ROUTE_FILE]( exts, isIndex, name ) {
+    // Delegate to superior plugins
+    const identified = super[IDENTIFY_ROUTE_FILE]( exts, isIndex, name );
+    if (identified) return identified;
+
+    // Create a route using HtmlRoute/HtmlIndexRoute class for HTML files
+    if ( exts.html ) {
+      if ( isIndex ) return HtmlIndexRoute;
+      return HtmlRoute;
+    }
+
+    if ( isIndex && Object.keys(exts).length === 0 ) {
+      return HtmlIndexRoute;
+    }
+
+    // No HTML file found
+    return undefined;
+  }
+
+  // NB This is a simplification. Also need to use something
+  // like @overlook/plugin-path to route requests.
+  async handle( { res } ) {
+    // Return list of files
+    res.end(
+      this.children.map(
+        ( { name } ) => `<a href="${name}">${name}</a>`
+      ).join('\n');
+    );
+  }
+}
+```
+
 ### ESMAScript modules support (ESM)
 
 On versions of NodeJS which support ESM modules (Node 13+), route files can be ESM modules.
