@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.1
+
+Features:
+
+* Implicit directory index routes
+
+Tests:
+
+* Rename test function [refactor]
+
+Docs:
+
+* Fix example [fix]
+* Reformat and spelling
+
 ## 0.3.0
 
 Breaking changes:
