@@ -27,8 +27,8 @@
     "url": "https://github.com/overlookjs/plugin-load/issues"
   },
   "dependencies": {
-    "@overlook/plugin": "^0.2.7",
-    "@overlook/route": "^0.6.2",
+    "@overlook/plugin": "^0.3.0",
+    "@overlook/route": "^0.6.3",
     "fs-extra": "^9.0.0",
     "is-it-type": "^4.0.0"
   },
