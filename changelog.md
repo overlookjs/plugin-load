@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.3.2
+
+Refactor:
+
+* Shorten code
+
+Dependencies:
+
+* Update `@overlook/route` + `@overlook/plugin` dependencies
+
+Tests:
+
+* Tests for plugin subclassing Route
+
+Dev:
+
+* Update dev dependencies
+
 ## 0.3.1
 
 Features:
