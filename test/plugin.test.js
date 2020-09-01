@@ -12,7 +12,7 @@ const Route = require('@overlook/route'),
 
 // Tests
 
-describe('Plugin', () => { // eslint-disable-line jest/lowercase-name
+describe('Plugin', () => {
 	it('is an instance of Plugin class', () => {
 		expect(loadPlugin).toBeInstanceOf(Plugin);
 	});
