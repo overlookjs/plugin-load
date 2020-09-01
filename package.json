@@ -27,10 +27,11 @@
     "url": "https://github.com/overlookjs/plugin-load/issues"
   },
   "dependencies": {
-    "@overlook/plugin": "^0.3.0",
-    "@overlook/route": "^0.6.3",
-    "fs-extra": "^9.0.0",
-    "is-it-type": "^4.0.0"
+    "@overlook/plugin": "^0.4.1",
+    "@overlook/route": "^0.6.4",
+    "fs-extra": "^9.0.1",
+    "is-it-type": "^5.0.0",
+    "simple-invariant": "^2.0.0"
   },
   "devDependencies": {
     "@overlookmotel/eslint-config": "^7.1.2",
