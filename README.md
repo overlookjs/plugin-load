@@ -165,7 +165,7 @@ module.exports = new EditRoute();
 
 #### Parentage for directory index files
 
-As we saw above, the default parent for a directory index file is the index file in the directory about it in the directory hierarchy.
+As we saw above, the default parent for a directory index file is the index file in the directory above it in the directory hierarchy.
 
 i.e. the default `[PARENT_PATH]` for index files is `../`.
 
