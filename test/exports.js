@@ -23,4 +23,10 @@ module.exports = function itExports(loadPlugin) {
 			expect(typeof loadPlugin[key]).toBe('symbol');
 		});
 	});
+
+	describe('properties', () => {
+		it('File', () => { // eslint-disable-line jest/lowercase-name
+			expect(loadPlugin.File).toBeFunction();
+		});
+	});
 };

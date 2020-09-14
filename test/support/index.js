@@ -29,4 +29,5 @@ beforeEach(() => {
 	jest.resetModules();
 	exports.Route = require('@overlook/route');
 	exports.loadPlugin = require('@overlook/plugin-load');
+	exports.fsPlugin = require('@overlook/plugin-fs');
 });

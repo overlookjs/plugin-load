@@ -11,7 +11,9 @@
 const pathJoin = require('path').join;
 
 // Imports
-const {getFixturePath, loadFixture, createGetChild} = require('./support/utils.js');
+const {
+	getFixturePath, loadFixture, createGetChild, expectToBeFileWithPath
+} = require('./support/utils.js');
 
 // Init
 const modules = require('./support/index.js');
@@ -36,15 +38,15 @@ describe('extra files attached to routes', () => {
 
 	describe('root', () => {
 		it('route file', () => {
-			expect(root[FILES].js).toBe(pathJoin(fixturePath, 'index.js'));
+			expectToBeFileWithPath(root[FILES].js, pathJoin(fixturePath, 'index.js'));
 		});
 
 		it('file with another ext', () => {
-			expect(root[FILES].jsx).toBe(pathJoin(fixturePath, 'index.jsx'));
+			expectToBeFileWithPath(root[FILES].jsx, pathJoin(fixturePath, 'index.jsx'));
 		});
 
 		it('file with a .*.js ext', () => {
-			expect(root[FILES]['inc.js']).toBe(pathJoin(fixturePath, 'index.inc.js'));
+			expectToBeFileWithPath(root[FILES]['inc.js'], pathJoin(fixturePath, 'index.inc.js'));
 		});
 
 		it('no other files', () => {
@@ -61,15 +63,15 @@ describe('extra files attached to routes', () => {
 		});
 
 		it('route file', () => {
-			expect(route[FILES].js).toBe(pathJoin(fixturePath, 'view.js'));
+			expectToBeFileWithPath(route[FILES].js, pathJoin(fixturePath, 'view.js'));
 		});
 
 		it('file with another ext', () => {
-			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'view.jsx'));
+			expectToBeFileWithPath(route[FILES].jsx, pathJoin(fixturePath, 'view.jsx'));
 		});
 
 		it('file with a .*.js ext', () => {
-			expect(route[FILES]['inc.js']).toBe(pathJoin(fixturePath, 'view.inc.js'));
+			expectToBeFileWithPath(route[FILES]['inc.js'], pathJoin(fixturePath, 'view.inc.js'));
 		});
 
 		it('no other files', () => {
@@ -86,15 +88,15 @@ describe('extra files attached to routes', () => {
 		});
 
 		it('route file', () => {
-			expect(route[FILES].js).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+			expectToBeFileWithPath(route[FILES].js, pathJoin(fixturePath, 'sub/index.js'));
 		});
 
 		it('file with another ext', () => {
-			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'sub', 'index.jsx'));
+			expectToBeFileWithPath(route[FILES].jsx, pathJoin(fixturePath, 'sub/index.jsx'));
 		});
 
 		it('file with a .*.js ext', () => {
-			expect(route[FILES]['inc.js']).toBe(pathJoin(fixturePath, 'sub', 'index.inc.js'));
+			expectToBeFileWithPath(route[FILES]['inc.js'], pathJoin(fixturePath, 'sub/index.inc.js'));
 		});
 
 		it('no other files', () => {
@@ -111,15 +113,15 @@ describe('extra files attached to routes', () => {
 		});
 
 		it('route file', () => {
-			expect(route[FILES].js).toBe(pathJoin(fixturePath, 'sub', 'view.js'));
+			expectToBeFileWithPath(route[FILES].js, pathJoin(fixturePath, 'sub/view.js'));
 		});
 
 		it('file with another ext', () => {
-			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'sub', 'view.jsx'));
+			expectToBeFileWithPath(route[FILES].jsx, pathJoin(fixturePath, 'sub/view.jsx'));
 		});
 
 		it('file with a .*.js ext', () => {
-			expect(route[FILES]['inc.js']).toBe(pathJoin(fixturePath, 'sub', 'view.inc.js'));
+			expectToBeFileWithPath(route[FILES]['inc.js'], pathJoin(fixturePath, 'sub/view.inc.js'));
 		});
 
 		it('no other files', () => {
@@ -136,15 +138,15 @@ describe('extra files attached to routes', () => {
 		});
 
 		it('route file', () => {
-			expect(route[FILES].js).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.js'));
+			expectToBeFileWithPath(route[FILES].js, pathJoin(fixturePath, 'sub/subSub/index.js'));
 		});
 
 		it('file with another ext', () => {
-			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.jsx'));
+			expectToBeFileWithPath(route[FILES].jsx, pathJoin(fixturePath, 'sub/subSub/index.jsx'));
 		});
 
 		it('file with a .*.js ext', () => {
-			expect(route[FILES]['inc.js']).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.inc.js'));
+			expectToBeFileWithPath(route[FILES]['inc.js'], pathJoin(fixturePath, 'sub/subSub/index.inc.js'));
 		});
 
 		it('no other files', () => {
@@ -161,15 +163,15 @@ describe('extra files attached to routes', () => {
 		});
 
 		it('route file', () => {
-			expect(route[FILES].js).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'view.js'));
+			expectToBeFileWithPath(route[FILES].js, pathJoin(fixturePath, 'sub/subSub/view.js'));
 		});
 
 		it('file with another ext', () => {
-			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'view.jsx'));
+			expectToBeFileWithPath(route[FILES].jsx, pathJoin(fixturePath, 'sub/subSub/view.jsx'));
 		});
 
 		it('file with a .*.js ext', () => {
-			expect(route[FILES]['inc.js']).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'view.inc.js'));
+			expectToBeFileWithPath(route[FILES]['inc.js'], pathJoin(fixturePath, 'sub/subSub/view.inc.js'));
 		});
 
 		it('no other files', () => {

@@ -14,7 +14,8 @@ module.exports = {
 	rules: {
 		'import/no-unresolved': ['error', {ignore: ['^@overlook/plugin-load(/|$)']}],
 		'node/no-missing-require': ['error', {allowModules: ['@overlook/plugin-load']}],
-		'node/no-missing-import': ['error', {allowModules: ['@overlook/plugin-load']}]
+		'node/no-missing-import': ['error', {allowModules: ['@overlook/plugin-load']}],
+		'jest/expect-expect': ['error', {assertFunctionNames: ['expect', 'expectToBeFileWithPath']}]
 	},
 	overrides: [{
 		files: ['*.mjs'],

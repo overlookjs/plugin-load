@@ -230,6 +230,8 @@ If there is a file `routes/index.js` and also `routes/index.html`, the `.js` fil
 
 Ancillary files can then be processed by your route by obtaining the paths from the `[FILES]` object.
 
+`[FILES]` is keyed by file extension, and values are instances of [@overlook/plugin-fs](https://www.npmjs.com/package/@overlook/plugin-fs)'s `File` class.
+
 In this case:
 
 ```js
@@ -237,8 +239,8 @@ const { FILES } = require('@overlook/plugin-load');
 
 console.log( route[FILES] );
 // {
-//   js: '/full/path/to/routes/index.js',
-//   html: '/full/path/to/routes/index.html'
+//   js: { path: '/full/path/to/routes/index.js' },
+//   html: { path: '/full/path/to/routes/index.html' }
 // }
 ```
 
@@ -261,7 +263,7 @@ class HtmlRoute extends Route {
   // NB This is a simplification. Also need to use something
   // like @overlook/plugin-path to route requests.
   async handle( { res } ) {
-    const html = await fs.readFile( this[FILES].html );
+    const html = await fs.readFile( this[FILES].html.path );
     res.end( html );
   }
 }
@@ -291,7 +293,7 @@ After loading, `[FILES]` property of that route will contain:
 
 ```js
 {
-  html: '/full/path/to/routes/about.html'
+  html: { path: '/full/path/to/routes/about.html' }
 }
 ```
 

@@ -9,7 +9,9 @@
 const pathJoin = require('path').join;
 
 // Imports
-const {getFixturePath, loadFixture, createGetChild} = require('./support/utils.js');
+const {
+	getFixturePath, loadFixture, createGetChild, expectToBeFileWithPath
+} = require('./support/utils.js');
 
 // Init
 const modules = require('./support/index.js');
@@ -108,7 +110,7 @@ function describeTests(fixtureName) {
 		});
 
 		it('file with another ext', () => {
-			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'view.jsx'));
+			expectToBeFileWithPath(route[FILES].jsx, pathJoin(fixturePath, 'view.jsx'));
 		});
 
 		it('no other files', () => {
@@ -154,7 +156,7 @@ function describeTests(fixtureName) {
 		});
 
 		it('file with another ext', () => {
-			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'edit.jsx'));
+			expectToBeFileWithPath(route[FILES].jsx, pathJoin(fixturePath, 'edit.jsx'));
 		});
 
 		it('no other files', () => {
@@ -200,7 +202,7 @@ function describeTests(fixtureName) {
 		});
 
 		it('file with another ext', () => {
-			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'sub', 'index.jsx'));
+			expectToBeFileWithPath(route[FILES].jsx, pathJoin(fixturePath, 'sub/index.jsx'));
 		});
 
 		it('no other files', () => {
@@ -246,7 +248,7 @@ function describeTests(fixtureName) {
 		});
 
 		it('file with another ext', () => {
-			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'sub', 'view.jsx'));
+			expectToBeFileWithPath(route[FILES].jsx, pathJoin(fixturePath, 'sub/view.jsx'));
 		});
 
 		it('no other files', () => {
@@ -292,7 +294,7 @@ function describeTests(fixtureName) {
 		});
 
 		it('file with another ext', () => {
-			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'sub', 'edit.jsx'));
+			expectToBeFileWithPath(route[FILES].jsx, pathJoin(fixturePath, 'sub/edit.jsx'));
 		});
 
 		it('no other files', () => {
@@ -338,7 +340,7 @@ function describeTests(fixtureName) {
 		});
 
 		it('file with another ext', () => {
-			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.jsx'));
+			expectToBeFileWithPath(route[FILES].jsx, pathJoin(fixturePath, 'sub/subSub/index.jsx'));
 		});
 
 		it('no other files', () => {
@@ -384,7 +386,7 @@ function describeTests(fixtureName) {
 		});
 
 		it('file with another ext', () => {
-			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'view.jsx'));
+			expectToBeFileWithPath(route[FILES].jsx, pathJoin(fixturePath, 'sub/subSub/view.jsx'));
 		});
 
 		it('no other files', () => {
@@ -430,7 +432,7 @@ function describeTests(fixtureName) {
 		});
 
 		it('file with another ext', () => {
-			expect(route[FILES].jsx).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'edit.jsx'));
+			expectToBeFileWithPath(route[FILES].jsx, pathJoin(fixturePath, 'sub/subSub/edit.jsx'));
 		});
 
 		it('no other files', () => {

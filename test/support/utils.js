@@ -19,7 +19,8 @@ const FIXTURES_PATH = pathJoin(__dirname, '..', 'fixtures');
 module.exports = {
 	getFixturePath,
 	loadFixture,
-	createGetChild
+	createGetChild,
+	expectToBeFileWithPath
 };
 
 function getFixturePath(...parts) {
@@ -50,4 +51,9 @@ function getChild(route, ...names) {
 		if (!route) return undefined;
 	}
 	return route;
+}
+
+function expectToBeFileWithPath(file, path) {
+	expect(file).toBeInstanceOf(modules.fsPlugin.File);
+	expect(file).toEqual({path, content: undefined});
 }

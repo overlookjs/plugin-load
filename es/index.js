@@ -26,5 +26,7 @@ export const {
 	LOAD_DIRS,
 	SRC_PATH,
 	SRC_DIR_PATH,
-	SRC_FILENAME
+	SRC_FILENAME,
+	// From @overlook/plugin-fs
+	File
 } = loadPlugin;
