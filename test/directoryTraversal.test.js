@@ -27,7 +27,7 @@ describe('directory traversal', () => {
 	describe('1 level deep', () => {
 		let fixturePath, root, getChild;
 		beforeEach(async () => {
-			fixturePath = getFixturePath('directory traversal', '1 level');
+			fixturePath = getFixturePath('directory traversal/1 level');
 			root = await loadFixture(fixturePath);
 			getChild = createGetChild(root);
 		});
@@ -71,7 +71,7 @@ describe('directory traversal', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/index.js'));
 			});
 
 			it('has name according to directory name', () => {
@@ -91,7 +91,7 @@ describe('directory traversal', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/index.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -112,7 +112,7 @@ describe('directory traversal', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'onParent.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/onParent.js'));
 			});
 
 			it('has name according to file name', () => {
@@ -132,7 +132,7 @@ describe('directory traversal', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'onParent.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/onParent.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -148,7 +148,7 @@ describe('directory traversal', () => {
 	describe('2 levels deep', () => {
 		let fixturePath, root, getChild;
 		beforeEach(async () => {
-			fixturePath = getFixturePath('directory traversal', '2 levels');
+			fixturePath = getFixturePath('directory traversal/2 levels');
 			root = await loadFixture(fixturePath);
 			getChild = createGetChild(root);
 		});
@@ -192,7 +192,7 @@ describe('directory traversal', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/index.js'));
 			});
 
 			it('has name according to directory name', () => {
@@ -212,7 +212,7 @@ describe('directory traversal', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/index.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -233,7 +233,7 @@ describe('directory traversal', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/subSub/index.js'));
 			});
 
 			it('has name according to directory name', () => {
@@ -253,11 +253,11 @@ describe('directory traversal', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/subSub/index.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
-				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub'));
+				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub/subSub'));
 			});
 
 			it('has [SRC_FILENAME] set to file name', () => {
@@ -274,7 +274,7 @@ describe('directory traversal', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'onParentParent.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/subSub/onParentParent.js'));
 			});
 
 			it('has name according to file name', () => {
@@ -294,11 +294,11 @@ describe('directory traversal', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'onParentParent.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/subSub/onParentParent.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
-				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub'));
+				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub/subSub'));
 			});
 
 			it('has [SRC_FILENAME] set to file name', () => {
@@ -310,7 +310,7 @@ describe('directory traversal', () => {
 	describe('directory index on parent peer', () => {
 		let fixturePath, root, getChild;
 		beforeEach(async () => {
-			fixturePath = getFixturePath('directory traversal', 'on peer');
+			fixturePath = getFixturePath('directory traversal/on peer');
 			root = await loadFixture(fixturePath);
 			getChild = createGetChild(root);
 		});
@@ -395,7 +395,7 @@ describe('directory traversal', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/index.js'));
 			});
 
 			it('has name according to directory name', () => {
@@ -415,7 +415,7 @@ describe('directory traversal', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/index.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -436,7 +436,7 @@ describe('directory traversal', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'view.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/view.js'));
 			});
 
 			it('has name according to file name', () => {
@@ -456,7 +456,7 @@ describe('directory traversal', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'view.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/view.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -472,7 +472,7 @@ describe('directory traversal', () => {
 	describe('directory peer on parent peer', () => {
 		let fixturePath, root, getChild;
 		beforeEach(async () => {
-			fixturePath = getFixturePath('directory traversal', 'peer on peer');
+			fixturePath = getFixturePath('directory traversal/peer on peer');
 			root = await loadFixture(fixturePath);
 			getChild = createGetChild(root);
 		});
@@ -557,7 +557,7 @@ describe('directory traversal', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/index.js'));
 			});
 
 			it('has name according to directory name', () => {
@@ -577,7 +577,7 @@ describe('directory traversal', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/index.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -598,7 +598,7 @@ describe('directory traversal', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'onParentPeer.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/onParentPeer.js'));
 			});
 
 			it('has name according to file name', () => {
@@ -618,7 +618,7 @@ describe('directory traversal', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'onParentPeer.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/onParentPeer.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {

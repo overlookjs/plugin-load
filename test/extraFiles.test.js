@@ -84,7 +84,7 @@ describe('extra files attached to routes', () => {
 		let route;
 		beforeEach(() => {
 			route = getChild('sub');
-			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/index.js'));
 		});
 
 		it('route file', () => {
@@ -109,7 +109,7 @@ describe('extra files attached to routes', () => {
 		let route;
 		beforeEach(() => {
 			route = getChild('sub', 'view');
-			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'view.js'));
+			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/view.js'));
 		});
 
 		it('route file', () => {
@@ -134,7 +134,7 @@ describe('extra files attached to routes', () => {
 		let route;
 		beforeEach(() => {
 			route = getChild('sub', 'subSub');
-			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.js'));
+			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/subSub/index.js'));
 		});
 
 		it('route file', () => {
@@ -159,7 +159,7 @@ describe('extra files attached to routes', () => {
 		let route;
 		beforeEach(() => {
 			route = getChild('sub', 'subSub', 'view');
-			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'view.js'));
+			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/subSub/view.js'));
 		});
 
 		it('route file', () => {

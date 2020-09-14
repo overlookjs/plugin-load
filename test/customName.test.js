@@ -103,7 +103,7 @@ describe('does not over-write existing name prop', () => {
 		});
 
 		it('is loaded from correct file', () => {
-			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/index.js'));
 		});
 
 		it('has name as defined', () => {
@@ -115,7 +115,7 @@ describe('does not over-write existing name prop', () => {
 		});
 
 		it('has [SRC_PATH] set to file path', () => {
-			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/index.js'));
 		});
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {

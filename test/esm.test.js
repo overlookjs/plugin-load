@@ -48,7 +48,7 @@ describeIfEsmSupported('loads route files with .mjs extension', () => {
 	beforeEach(async () => {
 		// Only load once - no way to clear the import cache
 		if (root) return;
-		fixturePath = getFixturePath('esm', 'mjs');
+		fixturePath = getFixturePath('esm/mjs');
 		root = await loadFixture(fixturePath);
 		getChild = createGetChild(root);
 	});
@@ -133,7 +133,7 @@ describeIfEsmSupported('loads route files with .mjs extension', () => {
 		});
 
 		it('is loaded from correct file', () => {
-			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'index.mjs'));
+			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/index.mjs'));
 		});
 
 		it('has name according to file name', () => {
@@ -153,7 +153,7 @@ describeIfEsmSupported('loads route files with .mjs extension', () => {
 		});
 
 		it('has [SRC_PATH] set to file path', () => {
-			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'index.mjs'));
+			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/index.mjs'));
 		});
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -171,7 +171,7 @@ describeIfEsmSupported('loads route files with .js extension', () => {
 	beforeEach(async () => {
 		// Only load once - no way to clear the import cache
 		if (root) return;
-		fixturePath = getFixturePath('esm', 'js');
+		fixturePath = getFixturePath('esm/js');
 		root = await loadFixture(fixturePath);
 		getChild = createGetChild(root);
 	});
@@ -256,7 +256,7 @@ describeIfEsmSupported('loads route files with .js extension', () => {
 		});
 
 		it('is loaded from correct file', () => {
-			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+			expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/index.js'));
 		});
 
 		it('has name according to file name', () => {
@@ -276,7 +276,7 @@ describeIfEsmSupported('loads route files with .js extension', () => {
 		});
 
 		it('has [SRC_PATH] set to file path', () => {
-			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/index.js'));
 		});
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {

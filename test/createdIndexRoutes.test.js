@@ -174,7 +174,7 @@ function describeTests(fixtureName) {
 		});
 
 		it('has [SRC_PATH] set to file path', () => {
-			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'view.js'));
+			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/view.js'));
 		});
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -219,7 +219,7 @@ function describeTests(fixtureName) {
 		});
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
-			expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub'));
+			expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub/subSub'));
 		});
 
 		it('has [SRC_FILENAME] set to file name', () => {
@@ -252,11 +252,11 @@ function describeTests(fixtureName) {
 		});
 
 		it('has [SRC_PATH] set to file path', () => {
-			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'view.js'));
+			expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/subSub/view.js'));
 		});
 
 		it('has [SRC_DIR_PATH] set to dir path', () => {
-			expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub'));
+			expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub/subSub'));
 		});
 
 		it('has [SRC_FILENAME] set to file name', () => {

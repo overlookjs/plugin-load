@@ -71,7 +71,7 @@ describe('directories', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/index.js'));
 			});
 
 			it('has name according to directory name', () => {
@@ -91,7 +91,7 @@ describe('directories', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'index.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/index.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -112,7 +112,7 @@ describe('directories', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'view.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/view.js'));
 			});
 
 			it('has name according to file name', () => {
@@ -132,7 +132,7 @@ describe('directories', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'view.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/view.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -155,7 +155,7 @@ describe('directories', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/subSub/index.js'));
 			});
 
 			it('has name according to directory name', () => {
@@ -175,11 +175,11 @@ describe('directories', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'index.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/subSub/index.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
-				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub'));
+				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub/subSub'));
 			});
 
 			it('has [SRC_FILENAME] set to file name', () => {
@@ -196,7 +196,7 @@ describe('directories', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'view.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/subSub/view.js'));
 			});
 
 			it('has name according to file name', () => {
@@ -216,11 +216,11 @@ describe('directories', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub', 'view.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/subSub/view.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
-				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub', 'subSub'));
+				expect(route[SRC_DIR_PATH]).toBe(pathJoin(fixturePath, 'sub/subSub'));
 			});
 
 			it('has [SRC_FILENAME] set to file name', () => {

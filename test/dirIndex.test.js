@@ -27,7 +27,7 @@ describe('customised index file', () => {
 	describe('using [DIR_INDEX]', () => {
 		let fixturePath, root, getChild;
 		beforeEach(async () => {
-			fixturePath = getFixturePath('index', 'dirIndex');
+			fixturePath = getFixturePath('index/dirIndex');
 			root = await loadFixture(fixturePath);
 			getChild = createGetChild(root);
 		});
@@ -41,7 +41,7 @@ describe('customised index file', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', '_index.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/_index.js'));
 			});
 
 			it('has name according to directory name', () => {
@@ -61,7 +61,7 @@ describe('customised index file', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', '_index.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/_index.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -82,7 +82,7 @@ describe('customised index file', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub2', '_index.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub2/_index.js'));
 			});
 
 			it('has name according to directory name', () => {
@@ -102,7 +102,7 @@ describe('customised index file', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub2', '_index.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub2/_index.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -118,7 +118,7 @@ describe('customised index file', () => {
 	describe('using [GET_DIR_INDEX]', () => {
 		let fixturePath, root, getChild;
 		beforeEach(async () => {
-			fixturePath = getFixturePath('index', 'getDirIndex');
+			fixturePath = getFixturePath('index/getDirIndex');
 			root = await loadFixture(fixturePath);
 			getChild = createGetChild(root);
 		});
@@ -132,7 +132,7 @@ describe('customised index file', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub', '_index.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub/_index.js'));
 			});
 
 			it('has name according to directory name', () => {
@@ -152,7 +152,7 @@ describe('customised index file', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub', '_index.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub/_index.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
@@ -173,7 +173,7 @@ describe('customised index file', () => {
 			});
 
 			it('is loaded from correct file', () => {
-				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub2', '_index.js'));
+				expect(route.__filename).toBe(pathJoin(fixturePath, 'sub2/_index.js'));
 			});
 
 			it('has name according to directory name', () => {
@@ -193,7 +193,7 @@ describe('customised index file', () => {
 			});
 
 			it('has [SRC_PATH] set to file path', () => {
-				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub2', '_index.js'));
+				expect(route[SRC_PATH]).toBe(pathJoin(fixturePath, 'sub2/_index.js'));
 			});
 
 			it('has [SRC_DIR_PATH] set to dir path', () => {
