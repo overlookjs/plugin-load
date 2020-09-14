@@ -360,7 +360,7 @@ class HtmlIndexRoute extends HtmlLoadRoute {
 
 ### ESMAScript modules support (ESM)
 
-On versions of NodeJS which support ESM modules (Node 13+), route files can be ESM modules.
+On versions of NodeJS which support ESM modules (Node 12+), route files can be ESM modules.
 
 Either name the route files with `.mjs` / `.route.mjs` extension, or place a `package.json` file in the routes folder containing `{"type": "module"}`. See [NodeJS docs](https://nodejs.org/dist/latest-v14.x/docs/api/esm.html#esm_ecmascript_modules) for more info on ESM support in NodeJS.
 
