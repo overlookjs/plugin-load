@@ -54,6 +54,6 @@ function getChild(route, ...names) {
 }
 
 function expectToBeFileWithPath(file, path) {
-	expect(file).toBeInstanceOf(modules.fsPlugin.File);
+	expect(file).toBeInstanceOf(modules.loadPlugin.File);
 	expect(file).toEqual({path, content: undefined});
 }
