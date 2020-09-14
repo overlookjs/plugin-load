@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.4.0
+
+Breaking changes:
+
+* `[FILES]` contains `File` objects
+
+Bug fixes:
+
+* Use null prototype objects as dictionaries
+
+Refactor:
+
+* Avoid unnecessary array cloning
+* Rename var
+
+No code:
+
+* Code comments
+
+Tests:
+
+* Simplify paths
+
+Docs:
+
+* Correct Node versions supporting ESM
+* Fix typo
+
 ## 0.3.3
 
 Minor:
