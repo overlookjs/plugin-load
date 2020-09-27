@@ -1,6 +1,6 @@
 {
   "name": "@overlook/plugin-load",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Overlook framework file system loader plugin",
   "main": "index.js",
   "module": "es/index.js",
