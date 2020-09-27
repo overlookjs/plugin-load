@@ -2,10 +2,6 @@
 
 ## 0.4.1
 
-Features:
-
-* Integration with `@overlook/plugin-build`
-
 Dependencies:
 
 * Update `@overlook/route` + `@overlook/plugin-fs` dependencies
