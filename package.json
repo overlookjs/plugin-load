@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@overlook/plugin": "^0.4.1",
-    "@overlook/plugin-build": "^0.1.0",
+    "@overlook/plugin-build": "^0.1.1",
     "@overlook/plugin-fs": "0.1.1",
     "@overlook/route": "^0.6.5",
     "fs-extra": "^9.0.1",
