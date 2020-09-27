@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.4.1
+
+Features:
+
+* Integration with `@overlook/plugin-build`
+
+Dependencies:
+
+* Update `@overlook/route` + `@overlook/plugin-fs` dependencies
+
+Tests:
+
+* Load `File` class from `plugin-load`
+
+No code:
+
+* Remove defunct code comment
+
+Dev:
+
+* Update dev dependencies
+
 ## 0.4.0
 
 Breaking changes:
