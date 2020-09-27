@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.2
+
+Features:
+
+* Integration with `@overlook/plugin-build`
+
+Docs:
+
+* Link to Travis CI with HTTPS
+* Remove Greenkeeper badge
+
 ## 0.4.1
 
 Dependencies:
