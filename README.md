@@ -2,7 +2,6 @@
 [![Build Status](https://img.shields.io/travis/overlookjs/plugin-load/master.svg)](https://travis-ci.org/overlookjs/plugin-load)
 [![Dependency Status](https://img.shields.io/david/overlookjs/plugin-load.svg)](https://david-dm.org/overlookjs/plugin-load)
 [![Dev dependency Status](https://img.shields.io/david/dev/overlookjs/plugin-load.svg)](https://david-dm.org/overlookjs/plugin-load)
-[![Greenkeeper badge](https://badges.greenkeeper.io/overlookjs/plugin-load.svg)](https://greenkeeper.io/)
 [![Coverage Status](https://img.shields.io/coveralls/overlookjs/plugin-load/master.svg)](https://coveralls.io/r/overlookjs/plugin-load)
 
 # Overlook framework file system loader plugin
