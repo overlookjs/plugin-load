@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.4.4
+
+Bug fixes:
+
+* Call `[IDENTIFY_ROUTE_FILE]` with dir name for index routes
+
+Dependencies:
+
+* Update `@overlook/plugin-build` dependency
+
+Dev:
+
+* Update dev dependencies
+
 ## 0.4.3
 
 Dependencies:
